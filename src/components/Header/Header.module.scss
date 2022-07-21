@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-gray-400;
+}

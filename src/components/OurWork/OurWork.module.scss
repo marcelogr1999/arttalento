@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.ourWork {
+  display: flex;
+  flex-direction: column;
+}
+
+.ourWorkCards {
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+}

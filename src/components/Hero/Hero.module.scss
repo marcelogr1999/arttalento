@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 1.625rem;
+  margin-bottom: 1.5rem;
+}
+
+.heroDescription {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: $color-gray;
+}
+
+.heroButton {
+  color: white;
+  background-color: $color-red;
+  margin-bottom: 3rem;
+}

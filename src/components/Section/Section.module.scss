@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 0.875rem;
+  color: $color-light-red;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.375rem;
+  margin-bottom: 1.25rem;
+  color: $color-black;
+}
+
+.sectionDescription {
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+

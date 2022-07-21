@@ -1,0 +1,42 @@
+@import "variables";
+
+html,
+body {
+  font-family: Lato, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button,
+textarea,
+input {
+  font-family: inherit;
+}
+
+h {
+  line-height: 130%;
+}
+
+p {
+  line-height: 180%;
+  color: $color-gray;
+}
+
+section {
+  margin-top: 3rem;
+}
+
+.button {
+  padding: 1rem 0;
+  width: 100%;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.main {
+  padding: 0 1.5rem;
+}

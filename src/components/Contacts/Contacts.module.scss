@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.contacts {
+  margin-bottom: 5rem;
+}
+
+.contact {
+  display: flex;
+
+  .contactIcon {
+    background-color: #ff4b4b;
+  }
+}
+
+.contact:first-child {
+  border-bottom: 2px solid white;
+  .contactIcon {
+    border-radius: 10px 0 0 0;
+    background-color: #06d2ff;
+  }
+
+  .contactText {
+    border-radius: 0 10px 0 0;
+  }
+}
+
+.contact:last-child {
+  border-top: 2px solid white;
+
+  .contactIcon {
+    background-color: #7ad16c;
+    border-radius: 0 0 0 10px;
+  }
+
+  .contactText {
+    border-radius: 0 0 10px 0;
+  }
+}
+
+.contactIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.contactText {
+  flex: 1;
+  padding: 1rem 0 1rem 0.5rem;
+  background-color: $color-gray-500;
+  color: $color-gray;
+  font-size: 0.875rem;
+}
