@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .heroTitle {
@@ -21,4 +23,28 @@
   color: white;
   background-color: $color-red;
   margin-bottom: 3rem;
+}
+
+.heroButton:hover {
+  transition: color 0.3s;
+  background-color: $color-dark-red;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    max-width: 1240px;
+    margin: 3rem auto 0 auto;
+  }
+  .heroTitle {
+    font-size: 4rem;
+  }
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+  .heroButton {
+    color: white;
+    background-color: $color-red;
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+  }
 }

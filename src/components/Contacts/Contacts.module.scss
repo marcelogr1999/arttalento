@@ -51,3 +51,13 @@
   color: $color-gray;
   font-size: 0.875rem;
 }
+
+@media (min-width: 768px) {
+  .contactIcon {
+    padding: 1rem;
+  }
+  .contactText {
+    padding: 2rem 0 2rem 2rem;
+    font-size: 1.25rem;
+  }
+}

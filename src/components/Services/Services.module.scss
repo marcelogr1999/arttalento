@@ -1,4 +1,7 @@
 @import '../../styles/variables';
 
 .servicesCards {
+    display: flex;
+    gap:2rem;
+    flex-wrap: wrap;
 }

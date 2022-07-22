@@ -3,6 +3,7 @@
 .section {
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
 }
 
 .sectionTitle {
@@ -20,5 +21,25 @@
 .sectionDescription {
   font-size: 0.875rem;
   margin-bottom: 2rem;
+}
+
+
+@media (min-width: 768px) {
+  .section {
+    max-width: 1240px;
+    margin: 11.25rem auto 0 auto;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 2.75rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1.125rem;
+  }
 }
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./WorkCard.module.scss";
-import workImg from "../../../../public/work-img.png";
+import workImg from "../../../../public/work-img-large.png";
 
 interface WorkCardProps {
   title: string;

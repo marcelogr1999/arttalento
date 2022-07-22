@@ -1,13 +1,8 @@
-@import '../../../styles/variables';
-
+@import "../../../styles/variables";
 
 .servicesCard {
   padding: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-}
-
-.servicesCard:not(:last-child) {
-  margin-bottom: 1.5rem;
 }
 
 .servicesCardIcon {
@@ -26,4 +21,11 @@
 
 .servicesCardDescription {
   font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .servicesCard {
+    padding: 2.5rem;
+    flex:1;
+  }
 }

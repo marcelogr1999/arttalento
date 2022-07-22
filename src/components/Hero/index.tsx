@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImg from "../../../public/hero-img.png";
+import heroImg from "../../../public/hero-img-large.png";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
@@ -19,7 +19,11 @@ const Hero = () => {
       >
         Faça seu orçamento
       </a>
-      <Image src={heroImg} alt="Quadro de acrílicos com marcas expostas" />
+      <Image
+        className={styles.heroImg}
+        src={heroImg}
+        alt="Quadro de acrílicos com marcas expostas"
+      />
     </section>
   );
 };
