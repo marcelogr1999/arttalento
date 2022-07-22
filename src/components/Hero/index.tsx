@@ -13,7 +13,10 @@ const Hero = () => {
         experientes que buscam qualidade, e a melhor solução na execução do seu
         projeto.
       </p>
-      <a href="#" className={`button ${styles.heroButton}`}>
+      <a
+        href="https://wa.me/5541998494501"
+        className={`button ${styles.heroButton}`}
+      >
         Faça seu orçamento
       </a>
       <Image src={heroImg} alt="Quadro de acrílicos com marcas expostas" />
