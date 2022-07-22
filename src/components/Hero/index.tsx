@@ -14,7 +14,7 @@ const Hero = () => {
         projeto.
       </p>
       <a
-        href="https://wa.me/5541998494501"
+        href="https://wa.me/5541998494501?text=Tire%20suas%20d%C3%BAvidas%20e%20fa%C3%A7a%20um%20or%C3%A7amento"
         className={`button ${styles.heroButton}`}
       >
         Faça seu orçamento
