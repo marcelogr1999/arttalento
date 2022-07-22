@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <Section
       title="Serviços"
-      subtitle=" Ofereçemos uma grande variedade de serviços"
+      subtitle=" Oferecemos uma grande variedade de serviços"
       description="A Empresa entrega projetos em diferentes ramos da comunicação visual,
         indo de cortes a laser a impressão digital."
     >
