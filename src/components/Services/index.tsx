@@ -10,6 +10,7 @@ const Services = () => {
       subtitle=" Oferecemos uma grande variedade de serviços"
       description="A Empresa entrega projetos em diferentes ramos da comunicação visual,
         indo de cortes a laser a impressão digital."
+      isDivided
     >
       <div className={styles.servicesCards}>
         {services.map((service) => (

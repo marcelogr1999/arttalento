@@ -3,6 +3,7 @@ import heroImg from "../../../public/hero-img-large.png";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
+
   return (
     <section className={styles.hero}>
       <h1 className={styles.heroTitle}>
@@ -10,8 +11,8 @@ const Hero = () => {
       </h1>
       <p className={styles.heroDescription}>
         A Empresa Art&Talento Comunicação Visual conta com profissionais
-        experientes que buscam qualidade, e a melhor solução na execução do seu
-        projeto.
+        experientes que buscam <br /> qualidade, e a melhor solução na execução
+        do seu projeto.
       </p>
       <a
         href="https://wa.me/5541998494501?text=Tire%20suas%20d%C3%BAvidas%20e%20fa%C3%A7a%20um%20or%C3%A7amento"
@@ -20,9 +21,10 @@ const Hero = () => {
         Faça seu orçamento
       </a>
       <Image
-        className={styles.heroImg}
         src={heroImg}
         alt="Quadro de acrílicos com marcas expostas"
+        layout="responsive"
+        priority
       />
     </section>
   );

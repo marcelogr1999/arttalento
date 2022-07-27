@@ -1,15 +1,50 @@
 @import "../../styles/variables";
 
-.header {
+.nav {
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid $color-gray-400;
+  align-items: center;
+  // border-bottom: 1px solid $color-gray-400;
+}
+
+.menuList {
+  position:absolute;
+  overflow:hidden;
+  z-index: 1;
+  top:83px;
+  left:0;
+  padding:1rem;
+  width: 100vw;
+  height: 100vh;
+  background-color:red;
 }
 
 @media (min-width: 768px) {
   .header {
     max-width: 1240px;
     margin: 0 auto;
+  }
+  .menuIcon {
+    display: none;
+  }
+
+  .menuList {
+    position: relative;
+    top:unset;
+    left:unset;
+    width:unset;
+    height:unset;
+    display: flex;
+    gap:1rem;
+  }
+  
+  .menuItem{
+    color:$color-black;
+    font-size: 1.125rem;
+  }
+  
+  .menuItem:not(:last-child){
+    padding-right:2rem;
   }
 }

@@ -9,6 +9,7 @@ const OurWork = () => {
       title="Nosso Trabalho"
       subtitle="Conheça nosso trabalho"
       description="Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient."
+      isCentered
     >
       <div className={styles.ourWorkCards}>
         {works.map((work) => (

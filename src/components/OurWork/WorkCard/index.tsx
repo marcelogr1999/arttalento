@@ -13,7 +13,7 @@ const WorkCard = ({ title, subtitle, description }: WorkCardProps) => {
     <div className={styles.card}>
       <Image
         src={workImg}
-        layout="fixed"
+        layout="responsive"
         alt="Troféu em acrílico escrito ABC"
       />
       <h2 className={styles.cardTitle}>{title}</h2>

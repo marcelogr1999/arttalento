@@ -17,6 +17,12 @@ input {
   font-family: inherit;
 }
 
+a{
+  color:inherit;
+  font-style: normal;
+  text-decoration: none;
+}
+
 h {
   line-height: 130%;
 }
@@ -26,12 +32,24 @@ p {
   color: $color-gray;
 }
 
+ul{
+  list-style: none;
+}
+
 .button {
   padding: 1rem 3rem;
   border-radius: 5px;
   text-decoration: none;
+  display: block;
+  font-weight: bold;
 }
 
 .main {
   padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .button {
+    display: inline-block;
+  }
 }
