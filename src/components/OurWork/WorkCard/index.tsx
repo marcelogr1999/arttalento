@@ -1,14 +1,9 @@
 import Image from "next/image";
 import styles from "./WorkCard.module.scss";
 import workImg from "../../../../public/work-img-large.png";
+import { Job } from "../../../graphql/generated";
 
-interface WorkCardProps {
-  title: string;
-  subtitle: string;
-  description: string;
-}
-
-const WorkCard = ({ title, subtitle, description }: WorkCardProps) => {
+const WorkCard = ({ title, subtitle, description }: Job) => {
   return (
     <div className={styles.card}>
       <Image
