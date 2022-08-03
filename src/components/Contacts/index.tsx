@@ -11,7 +11,7 @@ import { forwardRef, LegacyRef } from "react";
 // }
 // { email, location, phone }: ContactsProps
 
-const Contacts = forwardRef((_, ref: LegacyRef<HTMLDivElement>) => {
+const Contacts = forwardRef((_, ref: any) => {
   return (
     <div ref={ref} className={styles.contacts}>
       <Section
