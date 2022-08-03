@@ -15,8 +15,8 @@ interface HomePageProps {
 }
 
 const Home = ({ jobs }: HomePageProps) => {
-  const servicesRef = useRef<null | HTMLDivElement>(null);
-  const ourWorkRef = useRef<null | HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const ourWorkRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
 
   const executeServicesScroll = () =>
