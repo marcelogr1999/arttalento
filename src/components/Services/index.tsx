@@ -2,9 +2,9 @@ import styles from "./Services.module.scss";
 import { services } from "./content";
 import ServicesCard from "./ServicesCard";
 import Section from "../Section";
-import { forwardRef } from "react";
+import { forwardRef, Ref } from "react";
 
-const Services = forwardRef((_, ref) => (
+const Services = forwardRef((_, ref: Ref<HTMLDivElement>) => (
   <Section
     ref={ref}
     title="Serviços"

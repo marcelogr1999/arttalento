@@ -2,7 +2,7 @@ import { contact } from "./content";
 import styles from "./Contacts.module.scss";
 import Section from "../Section";
 import { Envelope, MapPin, Phone } from "phosphor-react";
-import { forwardRef, LegacyRef } from "react";
+import { forwardRef, Ref } from "react";
 
 // interface ContactsProps {
 //   email: string;
@@ -11,7 +11,7 @@ import { forwardRef, LegacyRef } from "react";
 // }
 // { email, location, phone }: ContactsProps
 
-const Contacts = forwardRef((_, ref: LegacyRef<HTMLDivElement> | undefined) => {
+const Contacts = forwardRef((_, ref: Ref<HTMLDivElement>) => {
   return (
     <div ref={ref} className={styles.contacts}>
       <Section

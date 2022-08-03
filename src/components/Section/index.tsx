@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { forwardRef, LegacyRef } from "react";
+import { forwardRef, Ref } from "react";
 import styles from "./Section.module.scss";
 
 interface SectionProps {
@@ -21,7 +21,7 @@ const Section = forwardRef(
       isCentered,
       isDivided,
     }: SectionProps,
-    ref: LegacyRef<HTMLDivElement> | undefined
+    ref: Ref<HTMLDivElement>
   ) => {
     const sectionClassnames = classNames(styles.section, {
       [styles.sectionCentered]: isCentered,
