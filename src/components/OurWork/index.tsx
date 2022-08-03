@@ -1,17 +1,17 @@
-// import { works } from "./content";
 import styles from "./OurWork.module.scss";
 import WorkCard from "./WorkCard";
 import Section from "../Section";
 import { Job } from "../../graphql/generated";
+import { forwardRef } from "react";
 
 interface OurWorkProps {
   jobs: Job[];
 }
 
-const OurWork = ({ jobs }: OurWorkProps) => {
-  console.log(jobs);
+const OurWork = forwardRef(({ jobs }: OurWorkProps, ref) => {
   return (
     <Section
+      ref={ref}
       title="Nosso Trabalho"
       subtitle="Conheça nosso trabalho"
       description="Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient."
@@ -31,6 +31,8 @@ const OurWork = ({ jobs }: OurWorkProps) => {
       </div>
     </Section>
   );
-};
+});
+
+OurWork.displayName = "Our Work";
 
 export default OurWork;

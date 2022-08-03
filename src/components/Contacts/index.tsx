@@ -2,6 +2,7 @@ import { contact } from "./content";
 import styles from "./Contacts.module.scss";
 import Section from "../Section";
 import { Envelope, MapPin, Phone } from "phosphor-react";
+import { forwardRef, LegacyRef } from "react";
 
 // interface ContactsProps {
 //   email: string;
@@ -10,9 +11,9 @@ import { Envelope, MapPin, Phone } from "phosphor-react";
 // }
 // { email, location, phone }: ContactsProps
 
-const Contacts = () => {
+const Contacts = forwardRef((_, ref: LegacyRef<HTMLDivElement>) => {
   return (
-    <div className={styles.contacts}>
+    <div ref={ref} className={styles.contacts}>
       <Section
         title="Contato"
         subtitle="Entre em contato"
@@ -51,6 +52,8 @@ const Contacts = () => {
       </Section>
     </div>
   );
-};
+});
+
+Contacts.displayName = "Contacts";
 
 export default Contacts;
