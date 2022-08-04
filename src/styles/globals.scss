@@ -1,12 +1,12 @@
 @import "variables";
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
 html,
 body {
-  font-family: Lato, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 * {
@@ -21,8 +21,8 @@ input {
   font-family: inherit;
 }
 
-a{
-  color:inherit;
+a {
+  color: inherit;
   font-style: normal;
   text-decoration: none;
 }
@@ -33,10 +33,10 @@ h {
 
 p {
   line-height: 180%;
-  color: $color-gray;
+  color: $color-gray-200;
 }
 
-ul{
+ul {
   list-style: none;
 }
 

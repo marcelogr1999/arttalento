@@ -12,6 +12,7 @@
   padding: .5rem;
   border-radius: 5px;
   text-align: center;
+  font-weight: 500;
 }
 
 .cardSubtitle {
@@ -20,7 +21,7 @@
 }
 
 .cardDescription {
-  color: $color-gray;
+  color: $color-gray-200;
   font-size: 0.875rem;
 }
 

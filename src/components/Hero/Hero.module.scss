@@ -6,14 +6,15 @@
 }
 
 .heroTitle {
-  font-size: 1.625rem;
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
+  letter-spacing: -.05em;
 }
 
 .heroDescription {
   font-size: 0.875rem;
   margin-bottom: 1.5rem;
-  color: $color-gray;
+  color: $color-gray-200;
 }
 
 .heroButton {
