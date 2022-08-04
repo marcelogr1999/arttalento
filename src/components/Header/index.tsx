@@ -5,9 +5,9 @@ import styles from "./Header.module.scss";
 import classNames from "classnames";
 
 interface HeaderProps {
-  executeServicesScroll?: MouseEventHandler<HTMLLIElement> | undefined;
-  executeOurWorkScroll?: MouseEventHandler<HTMLLIElement> | undefined;
-  executeContactsScroll?: MouseEventHandler<HTMLLIElement> | undefined;
+  executeServicesScroll: Function;
+  executeOurWorkScroll: Function;
+  executeContactsScroll: Function;
 }
 
 const Header = (props: HeaderProps) => {
@@ -32,7 +32,7 @@ const Header = (props: HeaderProps) => {
       </nav>
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
-          <Menu isMobile {...props} />
+          <Menu isMobile {...props} closeMenu={() => setIsMenuOpen(false)} />
         </div>
       )}
     </div>
@@ -41,9 +41,10 @@ const Header = (props: HeaderProps) => {
 
 interface MenuProps {
   isMobile?: boolean;
-  executeServicesScroll?: MouseEventHandler<HTMLLIElement> | undefined;
-  executeOurWorkScroll?: MouseEventHandler<HTMLLIElement> | undefined;
-  executeContactsScroll?: MouseEventHandler<HTMLLIElement> | undefined;
+  executeServicesScroll: Function;
+  executeOurWorkScroll: Function;
+  executeContactsScroll: Function;
+  closeMenu?: Function;
 }
 
 const Menu = ({
@@ -51,20 +52,35 @@ const Menu = ({
   executeServicesScroll,
   executeOurWorkScroll,
   executeContactsScroll,
+  closeMenu,
 }: MenuProps) => {
   const menuListClassNames = classNames(styles.menuList, {
     [styles.menuListMobile]: isMobile,
   });
 
+  const handleServicesClick = (executeScroll: Function) => {
+    executeScroll();
+    if (closeMenu) closeMenu();
+  };
+
   return (
     <ul className={menuListClassNames}>
-      <li className={styles.menuItem} onClick={executeServicesScroll}>
+      <li
+        className={styles.menuItem}
+        onClick={() => handleServicesClick(executeServicesScroll)}
+      >
         Serviços
       </li>
-      <li className={styles.menuItem} onClick={executeOurWorkScroll}>
+      <li
+        className={styles.menuItem}
+        onClick={() => handleServicesClick(executeOurWorkScroll)}
+      >
         Nosso Trabalho
       </li>
-      <li className={styles.menuItem} onClick={executeContactsScroll}>
+      <li
+        className={styles.menuItem}
+        onClick={() => handleServicesClick(executeContactsScroll)}
+      >
         Contato
       </li>
     </ul>
