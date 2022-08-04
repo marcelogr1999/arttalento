@@ -5,7 +5,7 @@ import styles from "./Section.module.scss";
 interface SectionProps {
   title: string;
   subtitle: string;
-  description: string;
+  description: string | undefined | null;
   children: React.ReactNode;
   isCentered?: boolean;
   isDivided?: boolean;

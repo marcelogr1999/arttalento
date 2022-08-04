@@ -2,23 +2,22 @@ import Image from "next/image";
 import heroImg from "../../../public/hero-img-large.png";
 import styles from "./Hero.module.scss";
 
-const Hero = () => {
+interface HeroProps {
+  title: string;
+  description: string;
+  buttonText: string;
+}
 
+const Hero = ({ title, description, buttonText }: HeroProps) => {
   return (
     <section className={styles.hero}>
-      <h1 className={styles.heroTitle}>
-        Faça seu projeto <br /> tornar-se realidade
-      </h1>
-      <p className={styles.heroDescription}>
-        A Empresa Art&Talento Comunicação Visual conta com profissionais
-        experientes que buscam <br /> qualidade, e a melhor solução na execução
-        do seu projeto.
-      </p>
+      <h1 className={styles.heroTitle}>{title}</h1>
+      <p className={styles.heroDescription}>{description}</p>
       <a
         href="https://wa.me/5541998494501?text=Tire%20suas%20d%C3%BAvidas%20e%20fa%C3%A7a%20um%20or%C3%A7amento"
         className={`button ${styles.heroButton}`}
       >
-        Faça seu orçamento
+        {buttonText}
       </a>
       <Image
         src={heroImg}

@@ -1,9 +1,0 @@
-query GetJobs {
-  jobs {
-    id
-    title
-    slug
-    subtitle
-    description
-  }
-}

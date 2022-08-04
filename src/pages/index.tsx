@@ -1,20 +1,15 @@
 // import type { NextPage } from "next";
 import Head from "next/head";
-
 import Services from "../components/Services";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import OurWork from "../components/OurWork";
 import Contacts from "../components/Contacts";
-import { Job, GetJobsDocument } from "../graphql/generated";
+import { GetHomeDocument, GetHomeQuery, HomePage } from "../graphql/generated";
 import { client } from "../lib/apollo";
 import { useRef } from "react";
 
-interface HomePageProps {
-  jobs: Job[];
-}
-
-const Home = ({ jobs }: HomePageProps) => {
+const Home = ({ hero, ourWork }: HomePage) => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const ourWorkRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
@@ -27,7 +22,6 @@ const Home = ({ jobs }: HomePageProps) => {
 
   const executeContactsScroll = () =>
     contactsRef?.current && contactsRef.current.scrollIntoView();
-
   return (
     <>
       <Head>
@@ -38,10 +32,11 @@ const Home = ({ jobs }: HomePageProps) => {
         executeOurWorkScroll={executeOurWorkScroll}
         executeContactsScroll={executeContactsScroll}
       />
+
       <main className="main">
-        <Hero />
+        <Hero {...hero} />
         <Services ref={servicesRef} />
-        <OurWork ref={ourWorkRef} jobs={jobs} />
+        <OurWork ref={ourWorkRef} {...ourWork} />
         <Contacts ref={contactsRef} />
       </main>
     </>
@@ -49,12 +44,13 @@ const Home = ({ jobs }: HomePageProps) => {
 };
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: GetJobsDocument,
+  const { data } = await client.query<GetHomeQuery>({
+    query: GetHomeDocument,
   });
+
   return {
     props: {
-      jobs: data?.jobs,
+      ...data.homePage,
     },
   };
 }
