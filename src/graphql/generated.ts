@@ -47,6 +47,7 @@ export type Asset = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  imageJob: Array<Job>;
   /** System Locale field */
   locale: Locale;
   /** Get the other localizations for this document */
@@ -98,6 +99,19 @@ export type AssetHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
+};
+
+
+/** Asset system model */
+export type AssetImageJobArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<JobOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<JobWhereInput>;
 };
 
 
@@ -171,6 +185,7 @@ export type AssetCreateInput = {
   fileName: Scalars['String'];
   handle: Scalars['String'];
   height?: InputMaybe<Scalars['Float']>;
+  imageJob?: InputMaybe<JobCreateManyInlineInput>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<AssetCreateLocalizationsInput>;
   mimeType?: InputMaybe<Scalars['String']>;
@@ -269,6 +284,9 @@ export type AssetManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  imageJob_every?: InputMaybe<JobWhereInput>;
+  imageJob_none?: InputMaybe<JobWhereInput>;
+  imageJob_some?: InputMaybe<JobWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -341,6 +359,7 @@ export type AssetUpdateInput = {
   fileName?: InputMaybe<Scalars['String']>;
   handle?: InputMaybe<Scalars['String']>;
   height?: InputMaybe<Scalars['Float']>;
+  imageJob?: InputMaybe<JobUpdateManyInlineInput>;
   /** Manage document localizations */
   localizations?: InputMaybe<AssetUpdateLocalizationsInput>;
   mimeType?: InputMaybe<Scalars['String']>;
@@ -564,6 +583,9 @@ export type AssetWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  imageJob_every?: InputMaybe<JobWhereInput>;
+  imageJob_none?: InputMaybe<JobWhereInput>;
+  imageJob_some?: InputMaybe<JobWhereInput>;
   mimeType?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   mimeType_contains?: InputMaybe<Scalars['String']>;
@@ -2512,6 +2534,7 @@ export type Job = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  image: Asset;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -2548,6 +2571,12 @@ export type JobHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: InputMaybe<Stage>;
+};
+
+
+/** This model can be used, for example, as a simple form on a website, app, database with several text fields already added. */
+export type JobImageArgs = {
+  locales?: InputMaybe<Array<Locale>>;
 };
 
 
@@ -2596,6 +2625,7 @@ export type JobCreateInput = {
   cl6ervexk1pvx01ta1gfo0ran?: InputMaybe<OurWorkCreateManyInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   description?: InputMaybe<Scalars['String']>;
+  image: AssetCreateOneInlineInput;
   slug: Scalars['String'];
   subtitle?: InputMaybe<Scalars['String']>;
   title: Scalars['String'];
@@ -2689,6 +2719,7 @@ export type JobManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  image?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2806,6 +2837,7 @@ export type JobUpdateInput = {
   cl6epk69j1lxk01tg49y9ccsz?: InputMaybe<OurWorkJjjjUpdateManyInlineInput>;
   cl6ervexk1pvx01ta1gfo0ran?: InputMaybe<OurWorkUpdateManyInlineInput>;
   description?: InputMaybe<Scalars['String']>;
+  image?: InputMaybe<AssetUpdateOneInlineInput>;
   slug?: InputMaybe<Scalars['String']>;
   subtitle?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
@@ -2941,6 +2973,7 @@ export type JobWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  image?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -7885,7 +7918,7 @@ export enum _SystemDateTimeFieldVariation {
 export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomeQuery = { __typename?: 'Query', homePage?: { __typename?: 'HomePage', hero: { __typename?: 'Hero', title: string, description: string, buttonText: string }, service: { __typename?: 'Service', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } }, ourWork: { __typename?: 'OurWork', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null }, jobs: Array<{ __typename?: 'Job', id: string, title: string, subtitle?: string | null, description?: string | null }> }, contact: { __typename?: 'Contact', phone?: string | null, email?: string | null, address?: string | null, text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } } } | null };
+export type GetHomeQuery = { __typename?: 'Query', homePage?: { __typename?: 'HomePage', hero: { __typename?: 'Hero', title: string, description: string, buttonText: string }, service: { __typename?: 'Service', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } }, ourWork: { __typename?: 'OurWork', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null }, jobs: Array<{ __typename?: 'Job', id: string, title: string, subtitle?: string | null, description?: string | null, image: { __typename?: 'Asset', url: string, width?: number | null, height?: number | null } }> }, contact: { __typename?: 'Contact', phone?: string | null, email?: string | null, address?: string | null, text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } } } | null };
 
 
 export const GetHomeDocument = gql`
@@ -7914,6 +7947,11 @@ export const GetHomeDocument = gql`
         title
         subtitle
         description
+        image {
+          url
+          width
+          height
+        }
       }
     }
     contact {

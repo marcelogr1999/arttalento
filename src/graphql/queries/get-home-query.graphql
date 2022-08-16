@@ -1,26 +1,3 @@
-# query GetHome {
-#   page(where: {slug: "home"}) {
-#     hero {
-#       title
-#       description
-#       buttonText
-#     }
-#     ourWork {
-#       jobs {
-#         id
-#         title
-#         subtitle
-#         description
-#       }
-#       text {
-#         title
-#         subtitle
-#         description
-#       }
-#     }
-#   }
-# }
-
 query GetHome {
   homePage(where: { id: "cl6er55d1clgb0bkcavtxsdls" }) {
     hero {
@@ -46,6 +23,11 @@ query GetHome {
         title
         subtitle
         description
+        image {
+          url
+          width
+          height
+        }
       }
     }
     contact {

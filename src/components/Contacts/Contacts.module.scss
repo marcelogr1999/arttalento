@@ -72,6 +72,10 @@
   font-size: 0.875rem;
 }
 
+.map {
+  border: 0;
+  margin-bottom: 2rem;
+}
 @media (min-width: 768px) {
   .contactIcon {
     padding: 1rem;
@@ -79,5 +83,9 @@
   .contactText {
     padding: 1.5rem 0 1.5rem 2rem;
     font-size: 1.125rem;
+  }
+  .map {
+    width: 100%;
+    height: 450px;
   }
 }
