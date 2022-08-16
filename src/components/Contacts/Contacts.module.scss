@@ -6,10 +6,7 @@
 
 .contact {
   display: flex;
-
-  .contactIcon {
-    background-color: #ff4b4b;
-  }
+  transition: color 0.2s ease;
 }
 
 .contact:first-child {
@@ -19,8 +16,24 @@
     background-color: #06d2ff;
   }
 
-  .contactText {
-    border-radius: 0 10px 0 0;
+  &:hover {
+    .contactText {
+      border-radius: 0 10px 0 0;
+      background-color: lighten(#06d2ff, 40%);
+    }
+  }
+}
+
+.contact:nth-child(2) {
+  .contactIcon {
+    background-color: #ff4b4b;
+  }
+
+  &:hover {
+    .contactText {
+      border-radius: 0 10px 0 0;
+      background-color: lighten(#ff4b4b, 30%);
+    }
   }
 }
 
@@ -34,6 +47,13 @@
 
   .contactText {
     border-radius: 0 0 10px 0;
+  }
+
+  &:hover {
+    .contactText {
+      border-radius: 0 10px 0 0;
+      background-color: lighten(#7ad16c, 30%);
+    }
   }
 }
 

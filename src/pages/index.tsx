@@ -8,8 +8,9 @@ import Contacts from "../components/Contacts";
 import { GetHomeDocument, GetHomeQuery, HomePage } from "../graphql/generated";
 import { client } from "../lib/apollo";
 import { useRef } from "react";
+import Commission from "../components/Commission";
 
-const Home = ({ hero, ourWork }: HomePage) => {
+const Home = ({ hero, ourWork, service, contact }: HomePage) => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const ourWorkRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,7 @@ const Home = ({ hero, ourWork }: HomePage) => {
 
   const executeContactsScroll = () =>
     contactsRef?.current && contactsRef.current.scrollIntoView();
+  console.log(contact);
   return (
     <>
       <Head>
@@ -32,13 +34,13 @@ const Home = ({ hero, ourWork }: HomePage) => {
         executeOurWorkScroll={executeOurWorkScroll}
         executeContactsScroll={executeContactsScroll}
       />
-
       <main className="main">
         <Hero {...hero} />
-        <Services ref={servicesRef} />
+        <Services ref={servicesRef} {...service} />
         <OurWork ref={ourWorkRef} {...ourWork} />
-        <Contacts ref={contactsRef} />
+        <Contacts ref={contactsRef} {...contact} />
       </main>
+      <Commission />
     </>
   );
 };

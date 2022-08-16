@@ -1,7 +1,7 @@
 import styles from "./OurWork.module.scss";
 import WorkCard from "./WorkCard";
 import Section from "../Section";
-import { Job, OurWork } from "../../graphql/generated";
+import { OurWork } from "../../graphql/generated";
 import { forwardRef, Ref } from "react";
 
 const OurWork = forwardRef(

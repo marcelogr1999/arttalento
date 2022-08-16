@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.commission {
+  position: fixed;
+  background: #72a93c;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  bottom: 0;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+
+  &:hover {
+    background: #5f8837;
+  }
+}
+
+.text {
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .commission {
+    bottom: 1rem;
+    right: 0;
+    width: auto;
+    border-radius: 1rem 0 0 1rem;
+  }
+  .text {
+    display: none;
+  }
+}

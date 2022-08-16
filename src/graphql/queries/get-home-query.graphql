@@ -28,6 +28,13 @@ query GetHome {
       description
       buttonText
     }
+    service {
+      text {
+        title
+        subtitle
+        description
+      }
+    }
     ourWork {
       text {
         title
@@ -40,6 +47,16 @@ query GetHome {
         subtitle
         description
       }
+    }
+    contact {
+      text {
+        title
+        subtitle
+        description
+      }
+      phone
+      email
+      address
     }
   }
 }

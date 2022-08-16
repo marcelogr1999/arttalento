@@ -3,14 +3,14 @@ import { services } from "./content";
 import ServicesCard from "./ServicesCard";
 import Section from "../Section";
 import { forwardRef, Ref } from "react";
+import { Service } from "../../graphql/generated";
 
-const Services = forwardRef((_, ref: Ref<HTMLDivElement>) => (
+const Services = forwardRef(({ text }: Service, ref: Ref<HTMLDivElement>) => (
   <Section
     ref={ref}
-    title="Serviços"
-    subtitle=" Oferecemos uma grande variedade de serviços"
-    description="A Empresa entrega projetos em diferentes ramos da comunicação visual,
-  indo de cortes a laser a impressão digital."
+    title={text?.title}
+    subtitle={text?.subtitle}
+    description={text?.description}
     isDivided
   >
     <div className={styles.servicesCards}>
