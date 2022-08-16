@@ -2076,7 +2076,7 @@ export type HeroWhereUniqueInput = {
 
 export type HomePage = Node & {
   __typename?: 'HomePage';
-  contact?: Maybe<Contact>;
+  contact: Contact;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -2094,7 +2094,7 @@ export type HomePage = Node & {
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   scheduledIn: Array<ScheduledOperation>;
-  service?: Maybe<Service>;
+  service: Service;
   /** System stage field */
   stage: Stage;
   /** The time the document was updated */
@@ -2181,11 +2181,11 @@ export type HomePageConnection = {
 };
 
 export type HomePageCreateInput = {
-  contact?: InputMaybe<ContactCreateOneInlineInput>;
+  contact: ContactCreateOneInlineInput;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   hero: HeroCreateOneInlineInput;
   ourWork: OurWorkCreateOneInlineInput;
-  service?: InputMaybe<ServiceCreateOneInlineInput>;
+  service: ServiceCreateOneInlineInput;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
@@ -7885,7 +7885,7 @@ export enum _SystemDateTimeFieldVariation {
 export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomeQuery = { __typename?: 'Query', homePage?: { __typename?: 'HomePage', hero: { __typename?: 'Hero', title: string, description: string, buttonText: string }, service?: { __typename?: 'Service', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } } | null, ourWork: { __typename?: 'OurWork', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null }, jobs: Array<{ __typename?: 'Job', id: string, title: string, subtitle?: string | null, description?: string | null }> }, contact?: { __typename?: 'Contact', phone?: string | null, email?: string | null, address?: string | null, text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } } | null } | null };
+export type GetHomeQuery = { __typename?: 'Query', homePage?: { __typename?: 'HomePage', hero: { __typename?: 'Hero', title: string, description: string, buttonText: string }, service: { __typename?: 'Service', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } }, ourWork: { __typename?: 'OurWork', text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null }, jobs: Array<{ __typename?: 'Job', id: string, title: string, subtitle?: string | null, description?: string | null }> }, contact: { __typename?: 'Contact', phone?: string | null, email?: string | null, address?: string | null, text: { __typename?: 'Section', title: string, subtitle: string, description?: string | null } } } | null };
 
 
 export const GetHomeDocument = gql`
