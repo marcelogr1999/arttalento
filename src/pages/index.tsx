@@ -23,7 +23,6 @@ const Home = ({ hero, ourWork, service, contact }: HomePage) => {
 
   const executeContactsScroll = () =>
     contactsRef?.current && contactsRef.current.scrollIntoView();
-  console.log(contact);
   return (
     <>
       <Head>
