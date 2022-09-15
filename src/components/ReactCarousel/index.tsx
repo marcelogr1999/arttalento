@@ -4,7 +4,7 @@ import { Carousel as NativeCarousel } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/carousel.css";
 
 interface CarouselProps {
-  items: [];
+  items: string[];
   options: any;
 }
 
@@ -19,7 +19,6 @@ function Carousel({ items, options }: CarouselProps) {
       return { html: val };
     });
 
-    console.log(opts);
     const instance = new NativeCarousel(wrapper.current, opts);
 
     return () => {

@@ -27,7 +27,7 @@ const Hero = ({ title, description, buttonText }: HeroProps) => {
 };
 
 export const HeroCarousel = () => {
-  const a = renderToString(
+  const slideItem = renderToString(
     <Image
       src={heroImg}
       alt="Quadro de acrílicos com marcas expostas"
@@ -39,7 +39,7 @@ export const HeroCarousel = () => {
 
   return (
     <Carousel
-      items={[a,a,a]}
+      items={[slideItem, slideItem, slideItem]}
       options={{
         slidesPerPage: true,
         center: true,
