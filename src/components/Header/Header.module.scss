@@ -47,22 +47,10 @@
   .webMenu {
     display: block;
   }
-  // .menuIcon {
-  //   display: none;
-  // }
-
   .menuList {
     display: flex;
     gap: 1rem;
     flex-direction: row;
   }
-
-  // .menuItem{
-  //   color:$color-black;
-  //   font-size: 1.125rem;
-  // }
-
-  // .menuItem:not(:last-child){
-  //   padding-right:2rem;
-  // }
 }
+

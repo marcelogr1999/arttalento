@@ -3,12 +3,13 @@
 .hero {
   text-align: center;
   margin-top: 3rem;
+  padding: 0 1.5rem;
 }
 
 .heroTitle {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 
 .heroDescription {
@@ -32,6 +33,7 @@
   .hero {
     max-width: 1240px;
     margin: 3rem auto 0 auto;
+    padding: 0;
   }
   .heroTitle {
     font-size: 4rem;

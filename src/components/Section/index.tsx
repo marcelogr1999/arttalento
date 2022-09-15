@@ -9,6 +9,7 @@ interface SectionProps {
   children: React.ReactNode;
   isCentered?: boolean;
   isDivided?: boolean;
+  isInverted?: boolean;
 }
 
 const Section = forwardRef(
@@ -20,11 +21,13 @@ const Section = forwardRef(
       children,
       isCentered,
       isDivided,
+      isInverted
     }: SectionProps,
     ref: Ref<HTMLDivElement>
   ) => {
     const sectionClassnames = classNames(styles.section, {
       [styles.sectionCentered]: isCentered,
+      [styles.sectionInverted]: isInverted
     });
     const headClassnames = classNames({
       [styles.head]: isDivided,
@@ -32,14 +35,16 @@ const Section = forwardRef(
 
     return (
       <section ref={ref} className={sectionClassnames}>
-        <div className={headClassnames}>
-          <div>
-            <h2 className={styles.title}>{title}</h2>
-            <h3 className={styles.subtitle}>{subtitle}</h3>
+        <div className={styles.container}>
+          <div className={headClassnames}>
+            <div>
+              <h2 className={styles.title}>{title}</h2>
+              <h3 className={styles.subtitle}>{subtitle}</h3>
+            </div>
+            <p className={styles.description}>{description}</p>
           </div>
-          <p className={styles.description}>{description}</p>
+          {children}
         </div>
-        {children}
       </section>
     );
   }

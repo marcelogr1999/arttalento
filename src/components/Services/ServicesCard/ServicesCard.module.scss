@@ -1,8 +1,11 @@
 @import "../../../styles/variables";
 
 .servicesCard {
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  background-color:white;
+  border-radius: 1rem;
+  min-width: 320px;
 }
 
 .servicesCardIcon {

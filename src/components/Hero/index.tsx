@@ -1,6 +1,8 @@
 import Image from "next/image";
 import heroImg from "../../../public/hero-img-large.png";
+import Carousel from "../ReactCarousel";
 import styles from "./Hero.module.scss";
+import { renderToString } from "react-dom/server";
 
 interface HeroProps {
   title: string;
@@ -19,13 +21,35 @@ const Hero = ({ title, description, buttonText }: HeroProps) => {
       >
         {buttonText}
       </a>
-      <Image
-        src={heroImg}
-        alt="Quadro de acrílicos com marcas expostas"
-        layout="responsive"
-        priority
-      />
+      <HeroCarousel />
     </section>
+  );
+};
+
+export const HeroCarousel = () => {
+  const a = renderToString(
+    <Image
+      src={heroImg}
+      alt="Quadro de acrílicos com marcas expostas"
+      layout="responsive"
+      priority
+      key="1"
+    />
+  );
+
+  return (
+    <Carousel
+      items={[a,a,a]}
+      options={{
+        slidesPerPage: true,
+        center: true,
+        l10n: {
+          NEXT: "Próximo Item",
+          PREV: "Item Anterior",
+          GOTO: "Ir para o item %d",
+        },
+      }}
+    />
   );
 };
 

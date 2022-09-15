@@ -9,6 +9,7 @@ import { GetHomeDocument, GetHomeQuery, HomePage } from "../graphql/generated";
 import { client } from "../lib/apollo";
 import { useRef } from "react";
 import Commission from "../components/Commission";
+import Map from "../components/Map";
 
 const Home = ({ hero, ourWork, service, contact }: HomePage) => {
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,9 @@ const Home = ({ hero, ourWork, service, contact }: HomePage) => {
         <OurWork ref={ourWorkRef} {...ourWork} />
         <Contacts ref={contactsRef} {...contact} />
       </main>
+      <footer>
+        <Map/>
+      </footer>
       <Commission />
     </>
   );

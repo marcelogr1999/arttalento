@@ -7,19 +7,19 @@ import { forwardRef, Ref } from "react";
 const OurWork = forwardRef(
   ({ jobs, text }: OurWork, ref: Ref<HTMLDivElement>) => {
     return (
-      <Section
-        ref={ref}
-        title={text?.title}
-        subtitle={text?.subtitle}
-        description={text?.description}
-        isCentered
-      >
-        <div className={styles.ourWorkCards}>
-          {jobs.map((job) => (
-            <WorkCard key={job.id} {...job} />
-          ))}
-        </div>
-      </Section>
+        <Section
+          ref={ref}
+          title={text?.title}
+          subtitle={text?.subtitle}
+          description={text?.description}
+          isCentered
+        >
+          <div className={styles.ourWorkCards}>
+            {jobs.map((job) => (
+              <WorkCard key={job.id} {...job} />
+            ))}
+          </div>
+        </Section>
     );
   }
 );

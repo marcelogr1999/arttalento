@@ -12,6 +12,7 @@ const Services = forwardRef(({ text }: Service, ref: Ref<HTMLDivElement>) => (
     subtitle={text?.subtitle}
     description={text?.description}
     isDivided
+    isInverted
   >
     <div className={styles.servicesCards}>
       {services.map((service) => (

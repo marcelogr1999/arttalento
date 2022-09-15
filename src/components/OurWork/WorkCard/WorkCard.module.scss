@@ -2,6 +2,7 @@
 
 .card {
   min-width: 220px;
+  width: 220px;
 }
 
 .cardTitle {
@@ -9,7 +10,7 @@
   font-size: 0.75rem;
   margin: 1rem 0;
   background: #f1f1f1;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5px;
   text-align: center;
   font-weight: 500;
@@ -25,9 +26,9 @@
   font-size: 0.875rem;
 }
 
-.image{
-  position: relative;
-  height: 200px;
+.image {
+    height:220px;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -42,5 +43,10 @@
   }
   .cardDescription {
     font-size: 1rem;
+  }
+
+  .image {
+    position: relative;
+    height:270px;
   }
 }

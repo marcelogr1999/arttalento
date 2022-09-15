@@ -14,9 +14,9 @@ const WorkCard = ({ title, subtitle, description, image }: Job) => {
           />
         )}
       </div>
+      {/* <h3 className={styles.cardSubtitle}>{subtitle}</h3> */}
       <h2 className={styles.cardTitle}>{title}</h2>
-      <h3 className={styles.cardSubtitle}>{subtitle}</h3>
-      <p className={styles.cardDescription}>{description}</p>
+      {/* <p className={styles.cardDescription}>{description}</p> */}
     </div>
   );
 };

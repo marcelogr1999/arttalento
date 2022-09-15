@@ -52,12 +52,34 @@ address {
   font-weight: bold;
 }
 
-.main {
-  padding: 0 1.5rem;
+//Carousel
+
+.carousel {
+  color: #170724;
+
+  // --carousel-button-bg: #fff;
+  // --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+  //   0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+  // --carousel-button-color: #ca0b0b;
+  --carousel-button-width: 48px;
+  --carousel-button-height: 48px;
+  --carousel-button-svg-width: 20px;
+  --carousel-button-svg-height: 20px;
+  --carousel-button-svg-stroke-width: 2.5;
+}
+
+.carousel__slide {
+  display: block;
+  --carousel-slide-width: 100%;
+  padding: 0 0.25rem !important;
 }
 
 @media (min-width: 768px) {
   .button {
     display: inline-block;
+  }
+  .carousel {
+    --carousel-button-svg-width: 30px;
+    --carousel-button-svg-height: 30px;
   }
 }
