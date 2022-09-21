@@ -4,72 +4,59 @@
   margin-bottom: 5rem;
 }
 
-.contact {
+.contactInfo {
+  margin-top: 2rem;
   display: flex;
-  transition: color 0.2s ease;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.contact:first-child {
-  border-bottom: 2px solid white;
-  .contactIcon {
-    border-radius: 10px 0 0 0;
-    background-color: #06d2ff;
-  }
-
-  &:hover {
-    .contactText {
-      border-radius: 0 10px 0 0;
-      background-color: lighten(#06d2ff, 40%);
-    }
-  }
+.contactTitle {
+  padding-bottom: 1rem;
+  color: #787878;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
 
-.contact:nth-child(2) {
-  .contactIcon {
-    background-color: #ff4b4b;
-  }
-
-  &:hover {
-    .contactText {
-      border-radius: 0 10px 0 0;
-      background-color: lighten(#ff4b4b, 30%);
-    }
-  }
-}
-
-.contact:last-child {
-  border-top: 2px solid white;
-
-  .contactIcon {
-    background-color: #7ad16c;
-    border-radius: 0 0 0 10px;
-  }
-
-  .contactText {
-    border-radius: 0 0 10px 0;
-  }
-
-  &:hover {
-    .contactText {
-      border-radius: 0 10px 0 0;
-      background-color: lighten(#7ad16c, 30%);
-    }
-  }
-}
-
-.contactIcon {
+.contactButtons {
   display: flex;
+  gap: 1rem;
+}
+
+.contactButton {
   justify-content: center;
+  display: flex;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
   align-items: center;
-  padding: 0.5rem;
+  color: $color-gray-500;
+}
+
+.contactButton:hover {
+  filter: opacity(90%);
+}
+
+.phone {
+  background: #72a93c;
+}
+
+.email {
+  background: #ca2727;
+}
+
+.instagram {
+  background: #833ab4;
+}
+
+.facebook {
+  background: #4267b2;
 }
 
 .contactText {
-  flex: 1;
-  padding: 1rem 0 1rem 0.5rem;
-  background-color: $color-gray-500;
-  color: $color-gray-200;
-  font-size: 0.875rem;
+  color: $color-gray-500;
+  display: none;
 }
 
 .map {
@@ -77,15 +64,14 @@
   margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
-  .contactIcon {
-    padding: 1rem;
-  }
-  .contactText {
-    padding: 1.5rem 0 1.5rem 2rem;
-    font-size: 1.125rem;
-  }
   .map {
     width: 100%;
     height: 450px;
+  }
+  .contactText {
+    display: block;
+  }
+  .contactTitle {
+    font-size: 1.125rem;
   }
 }

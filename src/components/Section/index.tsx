@@ -5,7 +5,7 @@ import styles from "./Section.module.scss";
 interface SectionProps {
   title: string;
   subtitle: string;
-  description: string | undefined | null;
+  description?: string;
   children: React.ReactNode;
   isCentered?: boolean;
   isDivided?: boolean;
@@ -21,13 +21,13 @@ const Section = forwardRef(
       children,
       isCentered,
       isDivided,
-      isInverted
+      isInverted,
     }: SectionProps,
     ref: Ref<HTMLDivElement>
   ) => {
     const sectionClassnames = classNames(styles.section, {
       [styles.sectionCentered]: isCentered,
-      [styles.sectionInverted]: isInverted
+      [styles.sectionInverted]: isInverted,
     });
     const headClassnames = classNames({
       [styles.head]: isDivided,
@@ -41,7 +41,7 @@ const Section = forwardRef(
               <h2 className={styles.title}>{title}</h2>
               <h3 className={styles.subtitle}>{subtitle}</h3>
             </div>
-            <p className={styles.description}>{description}</p>
+            {description && <p className={styles.description}>{description}</p>}
           </div>
           {children}
         </div>

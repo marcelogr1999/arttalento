@@ -1,43 +1,67 @@
 import styles from "./Contacts.module.scss";
 import Section from "../Section";
-import { Envelope, MapPin, Phone } from "phosphor-react";
+import {
+  Envelope,
+  FacebookLogo,
+  InstagramLogo,
+  WhatsappLogo,
+} from "phosphor-react";
 import { forwardRef, Ref } from "react";
 import { Contact } from "../../graphql/generated";
 
 const Contacts = forwardRef(
-  ({ text, address, email, phone }: Contact, ref: Ref<HTMLDivElement>) => {
+  ({ text, email, phone }: Contact, ref: Ref<HTMLDivElement>) => {
     return (
       <div ref={ref} className={styles.contacts}>
         <Section
           title={text?.title}
           subtitle={text?.subtitle}
-          description={text?.description}
         >
-          <div className={styles.contactsInfo}>
-            <a href={`mailto:${email}`} className={styles.contact}>
-              <div className={styles.contactIcon}>
-                <Envelope size={32} />
+          <div className={styles.contactInfo}>
+            <div className={styles.contact}>
+              <h3 className={styles.contactTitle}>Redes Sociais</h3>
+              <div className={styles.contactButtons}>
+                <a
+                  className={`${styles.contactButton} ${styles.instagram}`}
+                  href="https://www.instagram.com/artetalento.cwb/"
+                >
+                  <div className={styles.contactIcon}>
+                    <InstagramLogo size={32} weight="fill" />
+                  </div>
+                </a>
+                <a
+                  className={`${styles.contactButton} ${styles.facebook}`}
+                  href="https://www.facebook.com/artetalentocuritiba"
+                >
+                  <div className={styles.contactIcon}>
+                    <FacebookLogo size={32} weight="fill" />
+                  </div>
+                </a>
               </div>
-              <address className={styles.contactText}>{email}</address>
-            </a>
-            <a
-              href="https://goo.gl/maps/cxhixaPof56bPCg38"
-              className={styles.contact}
-            >
-              <div className={styles.contactIcon}>
-                <MapPin size={32} weight="fill" />
+            </div>
+            <div className={styles.contact}>
+              <h3 className={styles.contactTitle}>Envie uma mensagem</h3>
+              <div className={styles.contactButtons}>
+                <a
+                  className={`${styles.contactButton} ${styles.phone}`}
+                  href="https://wa.me/5541998494501?text=Tire%20suas%20d%C3%BAvidas%20e%20fa%C3%A7a%20um%20or%C3%A7amento"
+                >
+                  <div className={styles.contactIcon}>
+                    <WhatsappLogo size={32} />
+                  </div>
+                  <p className={styles.contactText}>{phone}</p>
+                </a>
+                <a
+                  className={`${styles.contactButton} ${styles.email}`}
+                  href={`mailto:${email}`}
+                >
+                  <div className={styles.contactIcon}>
+                    <Envelope size={32} />
+                  </div>
+                  <p className={styles.contactText}>{email}</p>
+                </a>
               </div>
-              <address className={styles.contactText}>{address}</address>
-            </a>
-            <a
-              href="https://wa.me/5541998494501?text=Tire%20suas%20d%C3%BAvidas%20e%20fa%C3%A7a%20um%20or%C3%A7amento"
-              className={styles.contact}
-            >
-              <div className={styles.contactIcon}>
-                <Phone size={32} weight="fill" />
-              </div>
-              <address className={styles.contactText}>{phone}</address>
-            </a>
+            </div>
           </div>
         </Section>
       </div>
